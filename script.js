@@ -235,23 +235,32 @@ function checkoutEmail() {
     window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent('New Order - ' + receipt.orderId)}&body=${encodeURIComponent(body)}`;
 }
 
-// Added Premium HTML-to-PDF Conversion Feature Function
+// Fixed Premium HTML-to-PDF Conversion Feature Function
 function downloadPDFInvoice() {
-    // Select specific container area to eliminate print artifact leakage
     const element = document.getElementById('invoice-print-area');
     const orderId = document.getElementById('receipt-orderid').innerText || 'Order';
     
     if(!element) return;
+
+    // Create an isolated clone to ensure visibility values are processed correctly by html2canvas
+    const elementClone = element.cloneNode(true);
+    elementClone.style.display = "block";
+    elementClone.style.width = "500px"; // Fixed canvas bounds for consistent printing look
     
-    // Configure crisp digital parameters
     const opt = {
         margin:       15,
         filename:     `Invoice-${orderId}.pdf`,
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, useCORS: true },
+        html2canvas:  { 
+            scale: 2, 
+            useCORS: true, 
+            logging: false,
+            scrollY: 0,
+            scrollX: 0
+        },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
 
-    // Execute standard asynchronous execution pipelines
-    html2pdf().set(opt).from(element).save();
+    // Build PDF directly from cloned nodes to prevent blank renders on certain browser viewports
+    html2pdf().set(opt).from(elementClone).save();
 }
