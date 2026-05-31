@@ -19,13 +19,13 @@
                 <input type="text" placeholder="Search for RC cars, Hot Wheels, Miniatures...">
                 <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-            <div class="nav-actions">
-                <div class="nav-action-item" onclick="togglePanel('wishlist-panel')">
+            <div class="nav-actions-stacked">
+                <div class="nav-action-row" onclick="togglePanel('wishlist-panel')">
                     <i class="fa-solid fa-heart color-orange"></i>
                     <span class="action-label">Wishlist</span>
                     <span class="badge bg-orange" id="nav-wishlist-count">0</span>
                 </div>
-                <div class="nav-action-item" onclick="togglePanel('cart-panel')">
+                <div class="nav-action-row" onclick="togglePanel('cart-panel')">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="action-label">Cart</span>
                     <span class="badge bg-blue" id="nav-cart-count">0</span>
@@ -224,7 +224,7 @@
             </div>
 
             <div id="receipt-page" class="receipt-box">
-                <div id="invoice-print-area">
+                <div id="invoice-print-area" class="invoice-pdf-container">
                     <div class="receipt-success-icon"><i class="fa-solid fa-circle-check"></i></div>
                     <h3 class="receipt-headline">Order Dispatched Safely!</h3>
                     <p class="receipt-meta"><strong>Order ID:</strong> <span id="receipt-orderid"></span></p>
