@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Your Cars | Premium Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fa-solid fa-car-side"></i> BuyYourCars<span class="logo-dot">.</span>
+            </a>
+            <div class="nav-search">
+                <input type="text" placeholder="Search for RC cars, Hot Wheels, Miniatures...">
+                <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="nav-actions">
+                <div class="nav-action-item" onclick="togglePanel('wishlist-panel')">
+                    <i class="fa-solid fa-heart color-orange"></i>
+                    <span class="action-label">Wishlist</span>
+                    <span class="badge bg-orange" id="nav-wishlist-count">0</span>
+                </div>
+                <div class="nav-action-item" onclick="togglePanel('cart-panel')">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="action-label">Cart</span>
+                    <span class="badge bg-blue" id="nav-cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="promo-banner-container">
+        <div class="promo-banner">
+            <h1>Super Deals on Miniatures & RC Cars</h1>
+            <p>Get an extra <strong>10% instant discount</strong> applied automatically at checkout! Free delivery included.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        
+        <section class="products-grid">
+            
+            <div class="product-card">
+                <div class="badge-discount">Top Rated</div>
+                <button class="wishlist-heart-btn" onclick="toggleWishlist('Audi RC Car', 799)" aria-label="Add to Wishlist">
+                    <i class="fa-regular fa-heart" id="heart-Audi-RC-Car"></i>
+                </button>
+                <div class="image-wrapper">
+                    <img class="product-image" src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=500&auto=format&fit=crop&q=60" alt="Audi RC Car">
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">RC Car</span>
+                    <h2 class="product-title">Audi RC Car</h2>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                        <span>(42)</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="product-price">₹799</span>
+                        <span class="original-price">₹1,199</span>
+                    </div>
+                    <div class="card-action-buttons">
+                        <button class="btn-card btn-add-tocart" onclick="addToCart('Audi RC Car', 799)">Add to Cart</button>
+                        <button class="btn-card btn-buynow" onclick="buyNowAction('Audi RC Car', 799)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="badge-discount bg-orange">Trending</div>
+                <button class="wishlist-heart-btn" onclick="toggleWishlist('Ferrari Hot Wheels', 399)" aria-label="Add to Wishlist">
+                    <i class="fa-regular fa-heart" id="heart-Ferrari-Hot-Wheels"></i>
+                </button>
+                <div class="image-wrapper">
+                    <img class="product-image" src="https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=500&auto=format&fit=crop&q=60" alt="Ferrari Hot Wheels">
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">Hot Wheels</span>
+                    <h2 class="product-title">Ferrari Hot Wheels</h2>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span>(118)</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="product-price">₹399</span>
+                        <span class="original-price">₹599</span>
+                    </div>
+                    <div class="card-action-buttons">
+                        <button class="btn-card btn-add-tocart" onclick="addToCart('Ferrari Hot Wheels', 399)">Add to Cart</button>
+                        <button class="btn-card btn-buynow" onclick="buyNowAction('Ferrari Hot Wheels', 399)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-heart-btn" onclick="toggleWishlist('BMW Miniature Car', 499)" aria-label="Add to Wishlist">
+                    <i class="fa-regular fa-heart" id="heart-BMW-Miniature-Car"></i>
+                </button>
+                <div class="image-wrapper">
+                    <img class="product-image" src="https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?w=500&auto=format&fit=crop&q=60" alt="BMW Miniature Car">
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">Miniature Car</span>
+                    <h2 class="product-title">BMW Miniature Car</h2>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i>
+                        <span>(29)</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="product-price">₹499</span>
+                        <span class="original-price">₹699</span>
+                    </div>
+                    <div class="card-action-buttons">
+                        <button class="btn-card btn-add-tocart" onclick="addToCart('BMW Miniature Car', 499)">Add to Cart</button>
+                        <button class="btn-card btn-buynow" onclick="buyNowAction('BMW Miniature Car', 499)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-heart-btn" onclick="toggleWishlist('Miniature Old Model', 799)" aria-label="Add to Wishlist">
+                    <i class="fa-regular fa-heart" id="heart-Miniature-Old-Model"></i>
+                </button>
+                <div class="image-wrapper">
+                    <img class="product-image" src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?w=500&auto=format&fit=crop&q=60" alt="Miniature Old Model">
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">Miniature</span>
+                    <h2 class="product-title">Miniature Old Model</h2>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                        <span>(54)</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="product-price">₹799</span>
+                        <span class="original-price">₹1,250</span>
+                    </div>
+                    <div class="card-action-buttons">
+                        <button class="btn-card btn-add-tocart" onclick="addToCart('Miniature Old Model', 799)">Add to Cart</button>
+                        <button class="btn-card btn-buynow" onclick="buyNowAction('Miniature Old Model', 799)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="checkout-sidebar">
+            
+            <div class="premium-card" id="cart-panel">
+                <h2 class="card-title"><i class="fa-solid fa-bag-shopping color-blue"></i> Shopping Cart</h2>
+                <div id="cart-items-container">
+                    <div class="empty-message">Your cart is currently empty.</div>
+                </div>
+                <div class="cart-total-section">
+                    <span>Subtotal Items:</span>
+                    <span id="cart-total-price" class="total-highlight">₹0</span>
+                </div>
+                <button class="btn-checkout btn-email" style="margin-top:15px;" onclick="openCheckoutModal()">Proceed to Order</button>
+            </div>
+
+            <div class="premium-card" id="wishlist-panel">
+                <h2 class="card-title"><i class="fa-solid fa-heart color-orange"></i> Your Wishlist</h2>
+                <div id="wishlist-items-container">
+                    <div class="empty-message">Your wishlist is currently empty.</div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div class="checkout-modal-overlay" id="checkout-modal">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closeCheckoutModal()">&times;</button>
+            <h2 class="card-title"><i class="fa-solid fa-truck-fast color-orange"></i> Secure Shipping & Customer Details</h2>
+            
+            <div class="form-grid-layout">
+                <div class="form-floating">
+                    <label for="buyer-name"><i class="fa-regular fa-user"></i> Full Name *</label>
+                    <input type="text" id="buyer-name" placeholder="John Doe">
+                </div>
+
+                <div class="form-floating">
+                    <label for="buyer-email"><i class="fa-regular fa-envelope"></i> Email Address *</label>
+                    <input type="email" id="buyer-email" placeholder="john@example.com">
+                </div>
+
+                <div class="form-floating">
+                    <label for="buyer-phone"><i class="fa-solid fa-phone-flip"></i> Phone Number *</label>
+                    <input type="tel" id="buyer-phone" placeholder="10-digit mobile number">
+                </div>
+
+                <div class="form-floating">
+                    <label for="buyer-pincode"><i class="fa-solid fa-location-dot"></i> Pincode *</label>
+                    <input type="text" id="buyer-pincode" placeholder="600001">
+                </div>
+
+                <div class="form-floating">
+                    <label for="buyer-dist"><i class="fa-solid fa-city"></i> District *</label>
+                    <input type="text" id="buyer-dist" placeholder="District name">
+                </div>
+
+                <div class="form-floating">
+                    <label for="buyer-state"><i class="fa-solid fa-map-location-dot"></i> State *</label>
+                    <input type="text" id="buyer-state" placeholder="State name">
+                </div>
+            </div>
+
+            <div class="form-floating">
+                <label for="buyer-address"><i class="fa-regular fa-map"></i> Complete Address (House No, Building, Street) *</label>
+                <textarea id="buyer-address" placeholder="Flat, Street name, LandMark details..."></textarea>
+            </div>
+
+            <div class="checkout-actions">
+                <button class="btn-checkout btn-whatsapp" onclick="checkoutWhatsApp()">
+                    <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+                </button>
+                <button class="btn-checkout btn-email" onclick="checkoutEmail()">
+                    <i class="fa-regular fa-envelope"></i> Order via Email
+                </button>
+            </div>
+
+            <div id="receipt-page" class="receipt-box">
+                <div id="invoice-print-area">
+                    <div class="receipt-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <h3 class="receipt-headline">Order Dispatched Safely!</h3>
+                    <p class="receipt-meta"><strong>Order ID:</strong> <span id="receipt-orderid"></span></p>
+                    
+                    <div class="receipt-details">
+                        <p><strong>Ship To:</strong> <span id="receipt-name"></span> (<span id="receipt-email"></span>)</p>
+                        <p><strong>Contact:</strong> <span id="receipt-phone"></span></p>
+                        <p><strong>Address:</strong> <span id="receipt-address"></span>, <span id="receipt-dist"></span>, <span id="receipt-state"></span> - <span id="receipt-pincode"></span></p>
+                    </div>
+                    
+                    <table class="receipt-table">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th class="txt-center">Qty</th>
+                                <th class="txt-right">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="receipt-products"></tbody>
+                    </table>
+                    <div class="receipt-grand-total">
+                        <span>Grand Total:</span>
+                        <span id="receipt-total"></span>
+                    </div>
+                </div>
+
+                <button class="btn-download-pdf" onclick="downloadPDFInvoice()">
+                    <i class="fa-solid fa-file-arrow-down"></i> Download Bill as PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
